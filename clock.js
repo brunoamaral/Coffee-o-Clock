@@ -4,6 +4,8 @@ function updateImage() {
   var h = d.getHours().toString();
   var m = d.getMinutes().toString();
 
+  if (m < 10) { m = '0' + m};
+
   image = h + m + '.JPG';
 
   element = document.getElementById('coffeeclock');
@@ -11,4 +13,4 @@ function updateImage() {
 }
 
 updateImage(); // call the first time
-setInterval(updateImage, 1 * 1000); // update each 1 second
+setInterval(updateImage, 5 * 1000); // update each 5 seconds
