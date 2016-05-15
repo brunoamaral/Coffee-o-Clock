@@ -6,11 +6,18 @@ function updateImage() {
 
   if (m < 10) { m = '0' + m};
 
-  image = h + m + '.JPG';
+  image = 'assets/images/clock/' + h + m + '.JPG';
+	$.get(image)
+		.done(function(){
+			element = document.getElementById('coffeeclock');
+			element.src = image;
+		}).fail(function(){
+			element = document.getElementById('coffeeclock');
+			element.src = 'http://placekitten.com/g/600/600';
+	});
+};
 
-  element = document.getElementById('coffeeclock');
-  element.src = 'assets/images/clock/' + image;
-}
-
-updateImage(); // call the first time
-setInterval(updateImage, 5 * 1000); // update each 5 seconds
+$(document).ready(function(){
+	updateImage() // call the first time
+	setInterval(updateImage, 5 * 1000) // update each 5 seconds
+});
