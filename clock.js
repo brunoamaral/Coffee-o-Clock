@@ -7,7 +7,7 @@ function updateImage() {
   image = h + m + '.JPG';
 
   element = document.getElementById('coffeeclock');
-  element.src = 'assets/image/clock/' + image;
+  element.src = 'assets/images/clock/' + image;
 }
 
 updateImage(); // call the first time
