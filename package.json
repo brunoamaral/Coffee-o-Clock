@@ -1,0 +1,26 @@
+{
+  "name": "coffeeclock",
+  "version": "0.0.1",
+  "description": "a caffeinated waste of time",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3"
+  },
+  "devDependencies": {
+    "jquery": "^2.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoamaral/coffeeclock.git"
+  },
+  "author": "bruno amaral",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunoamaral/coffeeclock/issues"
+  },
+  "homepage": "https://github.com/brunoamaral/coffeeclock#readme"
+}
