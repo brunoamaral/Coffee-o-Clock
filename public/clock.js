@@ -5,8 +5,8 @@ function updateImage() {
   var m = d.getMinutes().toString();
 
   if (m < 10) { m = '0' + m};
-
-  image = '/public/assets/images/clock/' + h + '00.JPG';
+  domain = 'http://labs.brunoamaral.eu/coffeeclock/'
+  image = domain + '/public/assets/images/clock/' + h + '00.JPG';
 	$.get(image)
 		.done(function(){
 			element = document.getElementById('coffeeclock');
