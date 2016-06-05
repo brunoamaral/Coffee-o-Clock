@@ -6,7 +6,7 @@ function updateImage() {
 
   if (m < 10) { m = '0' + m};
 
-  image = 'public/assets/images/clock/' + h + '00.JPG';
+  image = '/public/assets/images/clock/' + h + '00.JPG';
 	$.get(image)
 		.done(function(){
 			element = document.getElementById('coffeeclock');
