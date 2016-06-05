@@ -11,22 +11,11 @@ function updateImage() {
 	var loadingImage = loadImage(image, function(img){
 		var target = document.getElementById('coffeetable')
 		target.appendChild(img);
-	});
-
-// 	var xhr = new XMLHttpRequest();
-
-// 	xhr.open("GET", image, true);
-// 	xhr.responseType = "arraybuffer";
-// 	xhr.onload = function(e){
-// 		var blob = new Blob([this.response], {type: "image/jpeg"});
-// console.log(blob);
-// 	        var loadingImage = loadImage(blob, function(img){
-//                         document.getElementById('coffeetable').appendChild(img);
-//                 console.log(blob); console.log(img)},
-//                 {orientation: blob.exif.get('Orientation')}
-//                 );
-// 	}
-// 	xhr.send();
+		console.log(image);
+		}, {
+			orientation: image.exif.get('orientation')
+		}
+	);
 
 };
 
