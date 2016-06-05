@@ -12,10 +12,10 @@ function updateImage(loadImage) {
 	var xhr = new XMLHttpRequest();
 
 	xhr.open("GET", image, true);
-	xhr.responseType = "arraybuffer";
+	xhr.responseType = "blob";
 	xhr.onload = function(e){
-		var arrayBufferView = new Uint8Array(this.response);
-		var blob = new Blob([arrayBufferView], {type: "image/jpeg"})
+		var urlCreator = window.URL || window.webkitURL;
+		var imageUrl = urlCreator.createObjectURL(this.response);
 	}
 	xhr.send();
 	// $.get(image)
