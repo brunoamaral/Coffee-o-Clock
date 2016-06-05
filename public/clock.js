@@ -9,7 +9,8 @@ function updateImage() {
 	var image = domain + 'public/assets/images/clock/' + h + '00.JPG';
 
 	var loadingImage = loadImage(image, function(img){
-		document.getElementById('coffeetable').appendChild(img);
+		var target = document.getElementById('coffeetable')
+		target.appendChild(img);
 	});
 
 // 	var xhr = new XMLHttpRequest();
