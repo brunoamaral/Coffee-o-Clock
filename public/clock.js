@@ -1,4 +1,4 @@
-function updateImage(loadImage) {
+function updateImage() {
 
 	var d = new Date();
 	var h = d.getHours().toString();
@@ -7,29 +7,25 @@ function updateImage(loadImage) {
 
 	var domain = 'http://labs.brunoamaral.eu/coffeeclock/'
 	var image = domain + 'public/assets/images/clock/' + h + '00.JPG';
-	var element = document.getElementById('coffeetable');
 
-	var xhr = new XMLHttpRequest();
+	var loadingImage = loadImage(image, function(img){
+		document.getElementById('coffeetable').appendChild(img);
+	});
 
-	xhr.open("GET", image, true);
-	xhr.responseType = "arraybuffer";
-	xhr.onload = function(e){
-		var blob = new Blob([this.response], {type: "image/jpeg"});
-console.log(blob);
-	        var loadingImage = loadImage(blob, function(img){
-                        document.getElementById('coffeetable').appendChild(img);
-                console.log(blob); console.log(img)},
-                {orientation: blob.exif.get('Orientation')}
-                );
-	}
-	xhr.send();
-	// $.get(image)
-	// 	.done(function(){
-	// 		element.src = image;
-	// 	})
-	// 	.fail(function(){
-	// 		element.src = 'http://placekitten.com/g/600/600';
-	// });
+// 	var xhr = new XMLHttpRequest();
+
+// 	xhr.open("GET", image, true);
+// 	xhr.responseType = "arraybuffer";
+// 	xhr.onload = function(e){
+// 		var blob = new Blob([this.response], {type: "image/jpeg"});
+// console.log(blob);
+// 	        var loadingImage = loadImage(blob, function(img){
+//                         document.getElementById('coffeetable').appendChild(img);
+//                 console.log(blob); console.log(img)},
+//                 {orientation: blob.exif.get('Orientation')}
+//                 );
+// 	}
+// 	xhr.send();
 
 };
 
