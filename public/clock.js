@@ -6,16 +6,21 @@ function updateImage(loadImage) {
 		if (m < 10) { m = '0' + m};
 
 	var domain = 'http://labs.brunoamaral.eu/coffeeclock/'
-	image = domain + 'public/assets/images/clock/' + h + '00.JPG';
+	var image = domain + 'public/assets/images/clock/' + h + '00.JPG';
 	var element = document.getElementById('coffeetable');
 
 	var xhr = new XMLHttpRequest();
 
 	xhr.open("GET", image, true);
-	xhr.responseType = "blob";
+	xhr.responseType = "arraybuffer";
 	xhr.onload = function(e){
-		var urlCreator = window.URL || window.webkitURL;
-		var imageUrl = urlCreator.createObjectURL(this.response);
+		var blob = new Blob([this.response], {type: "image/jpeg"});
+console.log(blob);
+	        var loadingImage = loadImage(blob, function(img){
+                        document.getElementById('coffeetable').appendChild(img);
+                console.log(blob); console.log(img)},
+                {orientation: blob.exif.get('Orientation')}
+                );
 	}
 	xhr.send();
 	// $.get(image)
@@ -26,11 +31,6 @@ function updateImage(loadImage) {
 	// 		element.src = 'http://placekitten.com/g/600/600';
 	// });
 
-	var loadingImage = loadImage(blob, function (img){
-			element.appendChild(img);
-		},
-		{orientation: blob.exif.get('Orientation')}
-		);
 };
 
 $(document).ready(function(){
