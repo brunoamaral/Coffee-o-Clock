@@ -1,17 +1,19 @@
 function updateImage() {
 
-  var d = new Date();
-  var h = d.getHours().toString();
-  var m = d.getMinutes().toString();
+	var d = new Date();
+	var h = d.getHours().toString();
+	var m = d.getMinutes().toString();
+		if (m < 10) { m = '0' + m};
 
-  if (m < 10) { m = '0' + m};
-  domain = 'http://labs.brunoamaral.eu/coffeeclock/'
-  image = domain + '/public/assets/images/clock/' + h + '00.JPG';
+	var domain = 'http://labs.brunoamaral.eu/coffeeclock/'
+	var image = domain + '/public/assets/images/clock/' + h + '00.JPG';
+
 	$.get(image)
 		.done(function(){
 			element = document.getElementById('coffeeclock');
 			element.src = image;
-		}).fail(function(){
+		})
+		.fail(function(){
 			element = document.getElementById('coffeeclock');
 			element.src = 'http://placekitten.com/g/600/600';
 	});
