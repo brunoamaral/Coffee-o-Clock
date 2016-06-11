@@ -1,20 +1,29 @@
 function updateImage() {
 
-	var d = new Date();
-	var h = d.getHours().toString();
-	var m = d.getMinutes().toString();
-		if (m < 10) { m = '0' + m};
+	var debug = true;
 
-	var domain = 'http://labs.brunoamaral.eu/coffeeclock/'
-	var image = domain + 'public/assets/images/clock/' + h + '00.JPG';
+	if (debug === true) {
+		var image = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/0100.JPG';
+	} else {
+		var d = new Date();
+		var h = d.getHours().toString();
+		var m = d.getMinutes().toString();
+			if (m < 10) { m = '0' + m};
 
-	var loadingImage = loadImage(image, function(img){
-		var target = document.getElementById('coffeetable')
-		target.appendChild(img);
-		console.log(image);
-		}, {
-			orientation: image.exif.get('orientation')
-		}
+		var image = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/' + h + '00.JPG';
+
+	};
+
+	var newImage = loadImage(
+		image,
+		function (img) {
+			if(img.type === "error") {
+				console.log("Error loading image " + image);
+			} else {
+				document.body.appendChild(img);
+			}
+		},
+	    {maxWidth: 600}
 	);
 
 };
