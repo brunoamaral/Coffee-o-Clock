@@ -14,21 +14,13 @@ function updateImage() {
 
 	};
 
-	var newImage = loadImage(
-		image,
-		function (img) {
-			if(img.type === "error") {
-				console.log("Error loading image " + image);
-			} else {
-				element = document.getElementById('coffeetable')
-				element.style.backgroundImage = "url('"+ image + "')"
-				element.style.backgroundRepeat = "no-repeat"
-				element.style.backgroundSize = "contain"
-				element.style.backgroundPosition = "center"
-			}
-		},
-	    {maxWidth: 600}
-	);
+	$.get(image)
+			.done(function(){
+				element = $('.clock');
+				element.src = image;
+			}).fail(function(){
+				console.log('oh no!')
+		});
 
 };
 
