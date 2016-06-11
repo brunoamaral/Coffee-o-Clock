@@ -16,17 +16,16 @@ function updateImage() {
 
 	};
 
-	$.get(image_url)
+	if ($('.clock').attr('src') != image_url){
+		$.get(image_url)
 			.done(function(image){
-				if ($('.clock').attr('src') != image_url){
+
 					element = $('.clock').fadeOut("slow",function(){$(this).attr('src', image_url) }).fadeIn(500);   
-					console.log(image_url + ' is not equal to previous')
-				}else{ console.log('image source is equal to previous one')}
 
 			}).fail(function(){
-				console.log('oh no!')
+				console.log('oh no! Failed to get image.')
 		});
-
+	}else{ console.log('image source is equal to previous one')}
 };
 
 $(document).ready(function(){
