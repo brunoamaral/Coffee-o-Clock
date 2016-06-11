@@ -1,6 +1,6 @@
 function updateImage() {
 
-	var debug = true;
+	var debug = false;
 
 	if (debug === true) {
 		var image_url = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/0100.JPG';
@@ -16,8 +16,11 @@ function updateImage() {
 
 	$.get(image_url)
 			.done(function(image){
-				element = $('.clock').attr('src', image_url);
-				console.log(image_url)
+				if ($('.clock').attr('src') != image_url){
+					element = $('.clock').fadeOut("slow",function(){$(this).attr('src', image_url) }).fadeIn(500);   
+					console.log(image_url + ' is not equal to previous')
+				}else{ console.log('image source is equal to previous one')}
+
 			}).fail(function(){
 				console.log('oh no!')
 		});
@@ -26,5 +29,5 @@ function updateImage() {
 
 $(document).ready(function(){
 	updateImage() // call the first time
-	setInterval(updateImage, 15 * 1000) // update each 5 seconds
+	setInterval(updateImage, 3 * 1000) // update each 3 seconds
 });
