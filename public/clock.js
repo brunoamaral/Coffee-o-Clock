@@ -3,21 +3,21 @@ function updateImage() {
 	var debug = true;
 
 	if (debug === true) {
-		var image = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/0100.JPG';
+		var image_url = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/0100.JPG';
 	} else {
 		var d = new Date();
 		var h = d.getHours().toString();
 		var m = d.getMinutes().toString();
 			if (m < 10) { m = '0' + m};
 
-		var image = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/' + h + '00.JPG';
+		var image_url = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/' + h + '00.JPG';
 
 	};
 
-	$.get(image)
-			.done(function(){
-				element = $('.clock');
-				element.src = image;
+	$.get(image_url)
+			.done(function(image){
+				element = $('.clock').attr('src', image_url);
+				console.log(image_url)
 			}).fail(function(){
 				console.log('oh no!')
 		});
