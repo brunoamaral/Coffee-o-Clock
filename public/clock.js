@@ -20,7 +20,11 @@ function updateImage() {
 			if(img.type === "error") {
 				console.log("Error loading image " + image);
 			} else {
-				document.body.appendChild(img);
+				element = document.getElementById('coffeetable')
+				element.style.backgroundImage = "url('"+ image + "')"
+				element.style.backgroundRepeat = "no-repeat"
+				element.style.backgroundSize = "contain"
+				element.style.backgroundPosition = "center"
 			}
 		},
 	    {maxWidth: 600}
