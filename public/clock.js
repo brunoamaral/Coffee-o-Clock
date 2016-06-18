@@ -5,16 +5,21 @@ function updateImage() {
 	var main_url = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/';
 
 	if (debug === true) {
-		var image_url = main_url + '0100.JPG';
+		var image_url = main_url + '1500.JPG';
 	} else {
 		var d = new Date();
 		var h = d.getHours().toString();
 		var m = d.getMinutes().toString();
 			if (m < 10) { m = '0' + m};
 
-		var image_url = main_url + h + '00.JPG';
+		var image_url = main_url + h + m + '.JPG';
 
 	};
+
+	// Show something if the clock was just started
+	if ($('.clock').attr('src') == "" ){
+		element = $('.clock').fadeOut("slow",function(){$(this).attr('src', main_url + '1200.JPG') }).fadeIn(500);		
+	}
 
 	if ($('.clock').attr('src') != image_url){
 		$.get(image_url)
