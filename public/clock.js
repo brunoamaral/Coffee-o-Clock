@@ -18,7 +18,7 @@ function updateImage() {
 
 	// Show something if the clock was just started
 	if ($('.clock').attr('src') == "" ){
-		element = $('.clock').fadeOut("slow",function(){$(this).attr('src', main_url + '1200.JPG') }).fadeIn(500);		
+		element = $('.clock').fadeOut("slow",function(){$(this).attr('src', main_url + h + '00.JPG') }).fadeIn(500);		
 	}
 
 	if ($('.clock').attr('src') != image_url){
