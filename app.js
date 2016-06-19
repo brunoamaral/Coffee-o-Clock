@@ -14,8 +14,9 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(express.static(__dirname + '/public'));
-//app.use(express.static(path.join(__dirname, '/public')));
+// we want jade to print pretty so we are putting this here. Proper way would be to place it under the development environment
+app.locals.pretty = true;
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -23,7 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
@@ -59,6 +60,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(8080)
 module.exports = app;
-
-app.listen(8080);

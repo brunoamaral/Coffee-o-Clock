@@ -1,8 +1,22 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {height: 100%; margin: 0; padding: 0;}
+
+body{
+	background-color:#000;
+}
+img.clock {
+	image-orientation: from-image;
+	height: 100%;
+	vertical-align: top;
 }
 
-a {
-  color: #00B7FF;
+#coffeetable{
+	display: inline-block;
+	width: auto;
+	height: 100vh;
+}
+.vertical-center{
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh; /* These two lines are counted as one :-)       */
+	display: flex;
+	align-items: center;
 }
