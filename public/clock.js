@@ -9,6 +9,7 @@ function updateImage() {
 	} else {
 		var d = new Date();
 		var h = d.getHours().toString();
+			if (h < 10) {h = '0' + h};
 		var m = d.getMinutes().toString();
 			if (m < 10) { m = '0' + m};
 
