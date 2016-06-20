@@ -2,16 +2,16 @@ function updateImage() {
 
 	var debug = false;
 
-	var main_url = 'http://coffeeclock.brunoamaral.eu/coffeeclock/public/assets/images/clock/';
+	var main_url = 'http://coffeeclock.brunoamaral.eu/assets/images/clock/';
 
 	if (debug === true) {
 		var image_url = main_url + '1500.JPG';
 	} else {
 		var d = new Date();
 		var h = d.getHours().toString();
-			if (h < 10) {h = '0' + h};
+			if (h < 10) { h = '0' + h };
 		var m = d.getMinutes().toString();
-			if (m < 10) { m = '0' + m};
+			if (m < 10) { m = '0' + m };
 
 		var image_url = main_url + h + m + '.JPG';
 
