@@ -12,7 +12,11 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
+
+// we want jade to print pretty so we are putting this here. Proper way would be to place it under the development environment
+app.locals.pretty = true;
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -56,6 +60,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(8080)
 module.exports = app;
-
-app.listen(8080);

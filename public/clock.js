@@ -5,28 +5,33 @@ function updateImage() {
 	var main_url = 'http://coffeeclock.brunoamaral.eu/assets/images/clock/';
 
 	if (debug === true) {
-		var image_url = main_url + '2000.JPG';
+		var image_url = main_url + '1500.JPG';
 	} else {
 		var d = new Date();
 		var h = d.getHours().toString();
+			if (h < 10) { h = '0' + h };
 		var m = d.getMinutes().toString();
-			if (m < 10) { m = '0' + m};
+			if (m < 10) { m = '0' + m };
 
-		var image_url = main_url + h + '00.JPG';
+		var image_url = main_url + h + m + '.JPG';
 
 	};
 
-	$.get(image_url)
+	// Show something if the clock was just started
+	if ($('.clock').attr('src') == "" ){
+		element = $('.clock').fadeOut("slow",function(){$(this).attr('src', main_url + h + '00.JPG') }).fadeIn(500);		
+	}
+
+	if ($('.clock').attr('src') != image_url){
+		$.get(image_url)
 			.done(function(image){
-				if ($('.clock').attr('src') != image_url){
+
 					element = $('.clock').fadeOut("slow",function(){$(this).attr('src', image_url) }).fadeIn(500);   
-					console.log(image_url + ' is not equal to previous')
-				}else{ console.log('image source is equal to previous one')}
 
 			}).fail(function(){
-				console.log('oh no!')
+				console.log('oh no! Failed to get image.')
 		});
-
+	}else{ console.log('image source is equal to previous one')}
 };
 
 $(document).ready(function(){
