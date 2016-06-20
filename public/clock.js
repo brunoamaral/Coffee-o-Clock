@@ -2,10 +2,10 @@ function updateImage() {
 
 	var debug = false;
 
-	var main_url = 'http://labs.brunoamaral.eu/coffeeclock/public/assets/images/clock/';
+	var main_url = 'http://coffeeclock.brunoamaral.eu/assets/images/clock/';
 
 	if (debug === true) {
-		var image_url = main_url + '0100.JPG';
+		var image_url = main_url + '2000.JPG';
 	} else {
 		var d = new Date();
 		var h = d.getHours().toString();
