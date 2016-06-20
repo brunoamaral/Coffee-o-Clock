@@ -12,7 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 // we want jade to print pretty so we are putting this here. Proper way would be to place it under the development environment
 app.locals.pretty = true;
