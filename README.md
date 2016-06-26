@@ -1,4 +1,4 @@
-# CoffeeClock
+# Coffee o'Clock
 
 A project of 24 cups of espresso, one for every hour.
 
