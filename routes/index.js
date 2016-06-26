@@ -4,9 +4,9 @@ var path = require("path");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Coffee O'clock": });
+  res.render('index', { title: "Coffee O'clock" });
 });
-
+	
 // serve static html
 // router.get('/home', function(req, res) {
 //     res.sendFile('index.html', { root: path.join(__dirname, '../public') });
