@@ -4,7 +4,7 @@ var path = require("path");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Coffee O'clock" });
+  res.render('index', { title: "Coffee OClock" });
 });
 	
 // serve static html
