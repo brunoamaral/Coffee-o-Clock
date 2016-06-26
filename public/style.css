@@ -5,14 +5,12 @@ body{
 }
 img.clock {
 	image-orientation: from-image;
-	height: 100%;
-	vertical-align: top;
+/*	height: 100%;*/
+/*	vertical-align: top;*/
 }
 
 #coffeetable{
 	display: inline-block;
-	width: auto;
-	height: 100vh;
 }
 .vertical-center{
 	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
