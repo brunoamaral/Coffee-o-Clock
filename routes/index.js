@@ -1,10 +1,27 @@
 var express = require('express');
 var router = express.Router();
 var path = require("path");
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: "Coffee OClock" });
+});
+
+router.get('/gallery', function(req, res, next){
+	fs.readdir('public/assets/images/clock', function(err, files){
+		if (!err){
+			var photos = [];
+			for (var i = 0; i < files.length; i++){
+				photos[i] = '/assets/images/clock/' + files[i]
+				console.log(photos)
+			}; 
+			res.render('gallery', { photos : photos });
+		}else{
+			throw err;
+		}
+	})
+//	console.log(fs.readdirSync('public/assets/images/clock'));
 });
 	
 // serve static html
