@@ -1,4 +1,5 @@
 var express = require('express');
+var exphbs = require('express-handlebars');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -11,8 +12,11 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
+app.engine('handlebars', exphbs({defaultLayout: 'layout'}));
+
+
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'mustache');
+app.set('view engine', 'handlebars');
 
 // we want jade to print pretty so we are putting this here. Proper way would be to place it under the development environment
 app.locals.pretty = true;

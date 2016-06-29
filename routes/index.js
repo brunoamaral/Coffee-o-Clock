@@ -5,7 +5,7 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Coffee OClock" });
+  res.render('index', { title: "Coffee OClock", javascript: '<script src="clock.js"></script>' });
 });
 
 router.get('/gallery', function(req, res, next){
@@ -16,12 +16,12 @@ router.get('/gallery', function(req, res, next){
 				photos[i] = '/assets/images/clock/' + files[i]
 				console.log(photos)
 			}; 
-			res.render('gallery', { photos : photos });
+			res.render('gallery', { photos : photos, javascript: '<script src="javascripts/bootstrap.min.js"></script>' });
 		}else{
-			throw err;
+			console.log(fs.readdirSync('public/assets/images/clock'));
 		}
 	})
-//	console.log(fs.readdirSync('public/assets/images/clock'));
+
 });
 	
 // serve static html
