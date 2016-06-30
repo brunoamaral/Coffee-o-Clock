@@ -5,6 +5,8 @@ body{
 }
 img.clock {
 	image-orientation: from-image;
+	max-height:100vh;
+
 /*	height: 100%;*/
 /*	vertical-align: top;*/
 }
@@ -17,4 +19,7 @@ img.clock {
 	max-height: 100vh; /* These two lines are counted as one :-)       */
 	display: flex;
 	align-items: center;
+}
+div.item img{
+	margin:0 auto;
 }
