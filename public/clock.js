@@ -2,7 +2,7 @@ function updateImage() {
 
 	var debug = false;
 
-	var main_url = 'http://coffeeclock.brunoamaral.eu/assets/images/clock/';
+	var main_url = '/assets/images/clock/';
 
 	if (debug === true) {
 		var image_url = main_url + '1500.JPG';
