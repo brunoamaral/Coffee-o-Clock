@@ -5,7 +5,7 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Coffee OClock", javascript: '<script src="clock.js"></script>' });
+  res.render('index', { title: "Coffee OClock", javascript: '<script src="clock.js"></script><script src="javascripts/bootstrap.min.js"></script>' });
 });
 
 router.get('/gallery', function(req, res, next){

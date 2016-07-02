@@ -20,3 +20,13 @@ img.clock {
 div.item img{
 	margin:0 auto;
 }
+
+/* NAV BAR */
+nav.navbar-default{
+	background-color: #000;
+	border-color: #333;
+}
+.navbar-default.active>a{
+	color: #999;
+	background-color: #555;
+}
