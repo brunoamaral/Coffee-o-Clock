@@ -30,3 +30,9 @@ nav.navbar-default{
 	color: #999;
 	background-color: #555;
 }
+.navbar-default .navbar-toggle{
+	border-color:#333;
+}
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: #333;
+}
