@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: "Coffee OClock", javascript: '<script src="clock.js"></script><script src="javascripts/bootstrap.min.js"></script>' });
 });
 
+router.get('/about', function(req, res, next) {
+  res.render('about', { title: "Coffee OClock", javascript: '<script src="clock.js"></script><script src="javascripts/bootstrap.min.js"></script>' });
+});
+
 router.get('/gallery', function(req, res, next){
 	fs.readdir('public/assets/images/clock', function(err, files){
 		if (!err){
