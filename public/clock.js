@@ -37,4 +37,6 @@ function updateImage() {
 $(document).ready(function(){
 	updateImage() // call the first time
 	setInterval(updateImage, 15 * 1000) // update each 15 seconds
+	// Hide the navigation bar
+	$('#hideNav').click(function(){$('nav').toggle('slow')});
 });
