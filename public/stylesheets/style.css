@@ -6,9 +6,6 @@ body{
 img.clock {
 	image-orientation: from-image;
 	max-height:100vh;
-
-/*	height: 100%;*/
-/*	vertical-align: top;*/
 }
 
 #coffeetable{
