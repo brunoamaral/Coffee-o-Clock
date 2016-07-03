@@ -20,7 +20,7 @@ img.clock {
 	display: flex;
 	align-items: center;
 }
-div.item img{
+div.item img, img.clock{
 	margin:0 auto;
 }
 
@@ -39,3 +39,4 @@ nav.navbar-default{
 .navbar-default .navbar-toggle .icon-bar{
 	background-color: #333;
 }
+.no-padding{padding-right: 0; padding-left: 0;}
